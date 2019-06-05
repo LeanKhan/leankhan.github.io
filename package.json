@@ -1,0 +1,23 @@
+{
+  "name": "leankhan.github.io",
+  "version": "1.0.0",
+  "description": "Emmanuel Segun-Lean's personal website",
+  "main": "index.js",
+  "dependencies": {
+    "nes.css": "^2.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeanKhan/leankhan.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeanKhan/leankhan.github.io/issues"
+  },
+  "homepage": "https://github.com/LeanKhan/leankhan.github.io#readme"
+}
