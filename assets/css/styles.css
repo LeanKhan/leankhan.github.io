@@ -25,6 +25,11 @@ footer {
   margin-top: 30px;
 }
 
+.header{
+  background-color: white !important;
+  fill-opacity: 0.5 !important;
+}
+
 .links li {
   display: inline-block;
 }
