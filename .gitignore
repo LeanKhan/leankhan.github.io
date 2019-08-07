@@ -1,3 +1,5 @@
+#ignore node_modules duh
 /node_modules
 
-blog/
+# Ignore the blog folder abeg
+/blog
