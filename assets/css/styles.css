@@ -4,7 +4,8 @@
 }
 
 body {
-  background-color: #212529 !important;
+  /* background-color: #212529 !important; */
+  background-color: #1d1f21 !important;
   font-family: "Kongtext" !important;
   color: #0c9f18 !important;
 }
@@ -25,7 +26,7 @@ footer {
   margin-top: 30px;
 }
 
-.header{
+.header {
   background-color: white !important;
   fill-opacity: 0.5 !important;
 }
