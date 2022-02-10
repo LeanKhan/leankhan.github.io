@@ -1,0 +1,72 @@
+---
+// Component Imports
+import BaseHead from '../components/BaseHead.astro';
+import BaseFooter from '../components/BaseFooter.astro';
+import BaseHeader from '../components/BaseHeader.astro';
+
+// Component Script:
+// You can write any JavaScript/TypeScript that you'd like here.
+// It will run during the build, but never in the browser.
+// All variables are available to use in the HTML template below.
+let title = 'Emmanuel "LeanKhan" Segun-Lean';
+let description = 'Personal Website of Emmanuel Segun-Lean';
+let permalink = 'https://e.segunlean.com';
+
+---
+
+<html lang="en">
+  <head>
+    <BaseHead {title} {description} {permalink} />
+  </head>
+  <body>
+    <div class="main-wrapper section md-section">
+    <BaseHeader />
+      <main class="main-content">
+          <h1 class="nes-text is-success pixel-text">
+            Emmanuel
+            <span class="d-none d-inline-md">"LeanKhan"</span>
+            Segun-Lean
+          </h1>
+
+          <span class="pixel-text badge badge-secondary mb-3">bio:</span>
+          <!-- <p class="text-light">Developer | Designer</p> -->
+          <p class="text-light">
+           I'm a Full-stack web developer and recent
+            Software Engineering graduate from Nigeria. I likes to build
+            products that have a social impact. I am interested in Nature,
+            Languages, and Startups. Currently working as a frontend engineer in
+            <span class="pixel-text badge badge-secondary p-1"
+              >Abuja, Nigeria</span
+            >
+          </p>
+
+          <h5 class="pixel-text">I have experience in...</h5>
+          <div class="text-white">
+            <ul>
+              <li>Javascript/Typescript</li>
+              <li>NodeJS</li>
+              <li>VueJS, Angular</li>
+              <li>Python</li>
+              <li>Logo Design</li>
+            </ul>
+          </div>
+
+          <h5 class="pixel-text">Working on...</h5>
+          <div class="text-white">
+            <ul>
+              <li>Improving my writing and reading</li>
+              <li>Learning French <i>oui oui</i></li>
+            </ul>
+          </div>
+
+          <h5 class="pixel-text">Would like to...</h5>
+          <div class="text-white">
+            <p>Learn Go, DevOps, Hausa, and a bit of Web3 :)</p>
+          </div>
+
+      </main>
+    </div>
+
+<BaseFooter />
+  </body>
+</html>

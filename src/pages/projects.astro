@@ -1,0 +1,43 @@
+---
+// Component Imports
+import BaseHead from '../components/BaseHead.astro';
+import BaseFooter from '../components/BaseFooter.astro';
+import BaseHeader from '../components/BaseHeader.astro';
+import Project from '../layouts/Project.astro';
+
+// Component Script:
+// You can write any JavaScript/TypeScript that you'd like here.
+// It will run during the build, but never in the browser.
+// All variables are available to use in the HTML template below.
+let title = 'Projects';
+let description = 'Selected Projects of ESLean';
+let permalink = 'https://e.segunlean.com/projects';
+
+let allProjects = await Astro.fetchContent('../meta/projects/*.md');
+allProjects = allProjects.sort((a, b) => new Date(a.projectDate).valueOf() - new Date(b.projectDate).valueOf());
+---
+
+<html lang="en">
+  <head>
+    <BaseHead {title} {description} {permalink} />
+  </head>
+  <body>
+    <div class="main-wrapper section md-section">
+    <BaseHeader />
+      <main class="main-content">
+
+        <h4>Selected Projects</h4>
+
+<section aria-label="Blog post list">
+					{allProjects.map((p) =>
+                    <Project project={p}>
+                        {p.content.html}
+                    </Project>)}
+				</section>
+
+      </main>
+    </div>
+
+<BaseFooter />
+  </body>
+</html>
