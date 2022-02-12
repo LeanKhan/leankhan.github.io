@@ -12,14 +12,14 @@ interface MarkdownFrontmatter {
 // You can write any JavaScript/TypeScript that you'd like here.
 // It will run during the build, but never in the browser.
 // All variables are available to use in the HTML template below.
-let title = 'Yarns';
-let description = 'The perfect starter for your perfect blog.';
+let title = 'Posts';
+let description = 'Like a blog...';
 let permalink = 'https://example.com/';
 
 // Data Fetching: List all Markdown posts in the repo.
 
 let allPosts = await Astro.fetchContent('./*.md');
-allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf());
+allPosts = allPosts.filter(p => !p.draft).sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf());
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
