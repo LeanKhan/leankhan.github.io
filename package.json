@@ -2,22 +2,24 @@
   "name": "leankhan.github.io",
   "version": "1.0.0",
   "description": "Emmanuel Segun-Lean's personal website",
-  "main": "index.js",
-  "dependencies": {
-    "nes.css": "^2.1.1"
+  "devDependencies": {
+    "astro": "^0.23.0-next.4"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/LeanKhan/leankhan.github.io.git"
-  },
-  "author": "",
+  "repository": "git+https://github.com/LeanKhan/leankhan.github.io.git",
+  "author": "LeanKhan <eslean20@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/LeanKhan/leankhan.github.io/issues"
   },
-  "homepage": "https://github.com/LeanKhan/leankhan.github.io#readme"
+  "homepage": "https://github.com/LeanKhan/leankhan.github.io#readme",
+  "private": false,
+  "dependencies": {
+    "rehype-external-links": "^1.0.1"
+  }
 }
