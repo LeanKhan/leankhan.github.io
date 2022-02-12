@@ -18,5 +18,8 @@
     "url": "https://github.com/LeanKhan/leankhan.github.io/issues"
   },
   "homepage": "https://github.com/LeanKhan/leankhan.github.io#readme",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "rehype-external-links": "^1.0.1"
+  }
 }

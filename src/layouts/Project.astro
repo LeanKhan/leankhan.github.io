@@ -1,29 +1,27 @@
 ---
 const { project } = Astro.props;
-const {name, description, link } = project;
+const {name, projectDate, link } = project;
 const tags = project.tags.split(",");
 ---
 
-    <article class="b-work">
-        <header class="b-work__header">
+    <article>
+        <header>
 
-            <h1 class="b-work__title">
+            <h2>
                 {name}
-            </h1>
+            </h2>
+            <p class="text-muted small">
+                date: {projectDate}
+            </p>
 
-            <ul class="b-tags-list">
-                {tags.map(tag => <li class="b-tag">{tag}</li>)}
-
+            <ul class="tag-list">
+                {tags.map(tag => <li class="pixel-text badge bg-secondary">{tag}</li>)}
             </ul>
 
         </header>
 
 
         <div class="b-work__content">
-
-            <p>
-                {description}
-            </p>
 
         <slot />
 

@@ -8,6 +8,30 @@
 
 // @ts-check
 export default /** @type {import('astro').AstroUserConfig} */ ({
-	// Enable the Preact renderer to support Preact JSX components.
-	renderers: ['@astrojs/renderer-preact'],
+  // Enable the Preact renderer to support Preact JSX components.
+  renderers: ["@astrojs/renderer-preact"],
+  markdownOptions: {
+    render: [
+		'@astrojs/markdown-remark',
+      {
+        rehypePlugins: [
+          [
+            "rehype-external-links",
+            {
+              content: {
+                type: "element",
+                tagName: "img",
+                properties: {
+                  src: "/assets/feather-external-link.svg",
+                  alt: "External link icon",
+                },
+                children: [],
+              },
+              contentProperties: { className: ["external-link-icon"] },
+            },
+          ],
+        ],
+      },
+    ],
+  },
 });
