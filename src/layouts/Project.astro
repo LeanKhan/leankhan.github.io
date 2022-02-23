@@ -2,16 +2,23 @@
 const { project } = Astro.props;
 const {name, projectDate, link } = project;
 const tags = project.tags.split(",");
+
+let linkEl = ``;
+
+if(link) {
+    linkEl = `<a class="d-flex justify-content-end ms-auto"
+    href="${link}" target="blank_">check it out</a>`;
+}
 ---
 
-    <article>
+    <article id={ name.toLowerCase() }>
         <header>
 
             <h2>
                 {name}
             </h2>
             <p class="text-muted small">
-                date: {projectDate}
+               {projectDate}
             </p>
 
             <ul class="tag-list">
@@ -25,6 +32,7 @@ const tags = project.tags.split(",");
 
         <slot />
 
+            {linkEl}
 
         </div>
 

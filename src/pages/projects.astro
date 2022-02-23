@@ -14,7 +14,8 @@ let description = 'Selected Projects of ESLean';
 let permalink = 'https://e.segunlean.com/projects';
 
 let allProjects = await Astro.fetchContent('../meta/projects/*.md');
-allProjects = allProjects.sort((a, b) => new Date(a.projectDate).valueOf() - new Date(b.projectDate).valueOf());
+// sort by newest first
+allProjects = allProjects.sort((a, b) => new Date(b.projectDate).valueOf() - new Date(a.projectDate).valueOf());
 ---
 
 <html lang="en">
