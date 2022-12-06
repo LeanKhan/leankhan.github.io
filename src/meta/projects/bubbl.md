@@ -2,7 +2,7 @@
 name: Bubbl
 projectDate: August 2020
 tags: vuejs, nodejs, django, social network
-link: https://link.mybubbl.me/intro?from=linkedin-leankhan
+link: https://bubbl.sturves.tech/intro?from=esegunleancom-website
 ---
 
 Bubbl is a social network for campuses. We wanted to create localized social networks that hid everything else. Each 'bubbl' is embedded within a bigger 'bubbl'. That means the smallest Bubbl was your estate, for example, that estate was in another Bubbl, your city, which was in another Bubbl, your country, and so on up to the global Bubbl.
