@@ -6,7 +6,7 @@ const currentPath = pathname.slice(1); // remove the first "/"
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" href="/">
-          <img src="/assets/images/abstract-leankhan-logo-small.png" width="50px" />
+          <img src="/assets/images/abstract-leankhan-logo-small.png" width="40px" style="border-radius: 4px;" />
         </a>
         <button class="navbar-toggler" id="base-navbar-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -18,10 +18,10 @@ const currentPath = pathname.slice(1); // remove the first "/"
               <a class={`nav-link ${currentPath === "" ? "active" : ""}`} href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class={`nav-link ${currentPath === "" ? "projects" : ""}`} href="/projects">Projects</a>
+              <a class={`nav-link ${currentPath === "projects" ? "active" : ""}`} href="/projects">Projects</a>
             </li>
             <li class="nav-item">
-              <a class={`nav-link ${currentPath === "" ? "posts" : ""}`} href="/posts">Posts</a>
+              <a class={`nav-link ${currentPath === "posts" ? "active" : ""}`} href="/posts">Posts</a>
             </li>
           </ul>
           <!-- <form class="form-inline my-2 my-md-0">
