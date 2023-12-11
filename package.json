@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Emmanuel Segun-Lean's personal website",
   "devDependencies": {
-    "astro": "^0.23.0-next.4"
+    "astro": "0.23.7"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
