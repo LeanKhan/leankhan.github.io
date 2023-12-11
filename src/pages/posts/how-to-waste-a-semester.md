@@ -4,12 +4,12 @@ setup: |
 title: How to waste a semester
 publishDate: 13 October 2020
 name: Emmanuel Segun-Lean
-description: Part of the Posts I did for StallionReview AUN student online magazine hosted on Bubbl :) This post was basically about
+description: One of the Posts I did for StallionReview, the unofficial AUN student online magazine hosted on Bubbl, in 2020.
 ---
 
 ![cover image](/assets/images/how-to-waste-a-semester-banner.jpg "How To Waste a Semester")
 
-_I wrote this because I was feeling preachy and it's something I have done before lol. Enjoy!_
+_I wrote this because I was feeling preachy and it's something I have done before lol. Same a!_
 
 Are you planning to waste this upcoming semester? Do you tire from regimental school life? Are you just stupid? THIS IS FOR YOU! I must admit am (\*I'm yes but I want you to cringe) not an expert on this topic but I have wasted many things before so I should know a thing or two.
 
@@ -30,7 +30,7 @@ I don’t think there’s a limit to club-joining so join all! At the end of the
 Indians amirite??? Every class you go to with a new instructor just block your mind. Don't listen to what they are saying. You prefer the last guy anyway, who dis? Without focusing on the class itself and what is being taught you won’t learn much and therefore will waste the semester. Oshey.
 
 **5\. Expect a “triumphant entry” back to Yola**  
-Thank you for your service brave soldier, you gallantly stayed home during this lockdown and fought off la Corona. Now you’re back and deserve all the praise and adulation. We must welcome you properly with parties and revelry, we must sacrifice to the gods of enjoyment for keeping you safe just so you could “RAVE” at Azurri. Praise be, Praise be. A lot of time and energy is wasted throwing or attending ~~worthless~~ raves. So why not have them every f-cking week? No problem. You started calling yourself a "Stoic"; life is full of suffering anyway so enjoy enjoy.
+Thank you for your service brave soldier, you gallantly stayed home during this lockdown and fought off la Corona. Now you’re back and deserve all the praise and adulation. We must welcome you properly with parties and revelry, we must sacrifice to the gods of enjoyment for keeping you safe just so you could “RAVE” at Azurri. Praise be, Praise be. A lot of time and energy is wasted throwing or attending worthless raves. So why not have them every f-cking week? No problem. You started calling yourself a "Stoic"; life is full of suffering anyway so enjoy enjoy.
 
 **6\. Stop all the good things you picked up during Lockdown** If you followed our last series "What I've Been Up To" you would notice that many students actually gained skills or got new hobbies but they also complained about house chores taking their time. Now that we’re at school, it will be a prudent use of time to improve those skills and explore more of those interests, so don’t do that. Throw everything away and blame it on "change of environment". Hey you started working out shey? Stop. You stopped wanking 3 times a day? More of that.
 
