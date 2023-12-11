@@ -16,26 +16,7 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
   renderers: ["@astrojs/renderer-preact"],
   markdownOptions: {
     render: [
-		'@astrojs/markdown-remark',
-      {
-        rehypePlugins: [
-          [
-            "rehype-external-links",
-            {
-              content: {
-                type: "element",
-                tagName: "img",
-                properties: {
-                  src: "/assets/feather-external-link.svg",
-                  alt: "External link icon",
-                },
-                children: [],
-              },
-              contentProperties: { className: ["external-link-icon"] },
-            },
-          ],
-        ],
-      },
+		'@astrojs/markdown-remark'
     ],
   },
 });
