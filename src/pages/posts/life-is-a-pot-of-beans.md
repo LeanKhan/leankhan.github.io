@@ -7,6 +7,8 @@ name: Emmanuel Segun-Lean
 description: One of the Posts I did for StallionReview, the unofficial AUN student online magazine hosted on Bubbl, in 2020.
 ---
 
+![cover image](/assets/images/life-is-a-pot-of-beans-cover.jpg "Life is a pot of beans")
+
 > “This life na one… but if you do am well, one go do”
 
 Recent happenings have made me think a lot more about the meaning of life. To understand things we can use metaphors to simplify them which is good for communicating complex ideas in simple relatable terms, like beans. By comparing life to a pot of beans I stuff all the complexity and vicissitudes of life into a single phrase. It just makes me understand it better. “Life is a pot of beans”. That’s been my response to things lately.
