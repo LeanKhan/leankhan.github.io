@@ -4,12 +4,12 @@ setup: |
 title: How to waste a semester
 publishDate: 13 October 2020
 name: Emmanuel Segun-Lean
-description: Part of the Posts I did for StallionReview AUN student online magazine hosted on Bubbl :)
+description: One of the Posts I did for StallionReview, the unofficial AUN student online magazine hosted on Bubbl, in 2020.
 ---
 
 ![cover image](/assets/images/how-to-waste-a-semester-banner.jpg "How To Waste a Semester")
 
-_I wrote this because I was feeling preachy and it's something I have done before lol. Enjoy!_
+_I wrote this because I was feeling preachy and it's something I have done before lol. Same a!_
 
 Are you planning to waste this upcoming semester? Do you tire from regimental school life? Are you just stupid? THIS IS FOR YOU! I must admit am (\*I'm yes but I want you to cringe) not an expert on this topic but I have wasted many things before so I should know a thing or two.
 

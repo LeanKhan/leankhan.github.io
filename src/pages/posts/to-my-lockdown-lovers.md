@@ -4,7 +4,7 @@ setup: |
 title: To my Lockdown Lovers
 publishDate: 21 October 2020
 name: Emmanuel Segun-Lean
-description: Part of the Posts I did for StallionReview AUN student online magazine hosted on Bubbl :)
+description: One of the Posts I did for StallionReview, the unofficial AUN student online magazine hosted on Bubbl, in 2020.
 ---
 
 _A student asked me to publish this letter he composed for the four "babes" he was "toasting" during the Lockdown period. Enjoy and share :) Names are abbreviated to protect the identities of the individuals_ -> Comment that was part of original article.
