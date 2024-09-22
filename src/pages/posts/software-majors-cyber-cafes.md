@@ -54,7 +54,7 @@ After some years you feel the need to move up in your “career” so you go to 
 
 1. Software Engineering in AUN, the American University of Nigeria
 
-2. I think I got this from https://www.aun.edu.ng/index.php/sitc/software-engineering
+2. I think I got this from [the AUN website](https://www.aun.edu.ng/index.php/sitc/software-engineering)
 
 3. CMD is the Communication & Multimedia Design program at AUN. This is a joke like any other that tries to dunk on art majors.
 
