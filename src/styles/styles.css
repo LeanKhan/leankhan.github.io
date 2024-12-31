@@ -102,7 +102,7 @@ body {
   letter-spacing: 0.037em;
 
   font-family: var(--font-body);
-	font-size: 1.2rem;
+	font-size: 18px;
 	/* font-size: clamp(0.875rem, 0.4626rem + 1.0309vw + var(--user-font-scale), 1.125rem); */
 	line-height: 1.625;
 
