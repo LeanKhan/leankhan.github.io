@@ -8,7 +8,7 @@ description: 2024 Year Review.
 ---
 👏🏾 👏🏾 Year Review 👏🏾 👏🏾
 
-I want to thank everyone who reads this yearly spiel, it is not east to weave seemingly random events from the past 12 months into one meaningful narrative but I’m sure it's even harder to watch me try :D
+I want to thank everyone who reads this yearly spiel, it is not easy to weave seemingly random events from the past 12 months into one meaningful narrative but I’m sure it's even harder to watch me try :D
 
 I started thinking about this year’s review in July. I knew that I would have a lot of things to say so my mind kept going to it, but I only seriously began writing it last week. Thank God we are seeing the end of the year. I didn’t want this piece to be only about moving to Canada because I spent a whole 7 months in Nigeria, however, most things that have happened have been in the 4 months since starting my Masters. Toh. What happened in those 7 months? Idk, I was preparing to travel. I think this year was about how my expectations are different from reality.
 
