@@ -4,10 +4,6 @@ import BaseHead from '../../components/BaseHead.astro';
 import BaseHeader from '../../components/BaseHeader.astro';
 import BlogPostPreview from '../../components/BlogPostPreview.astro';
 
-interface MarkdownFrontmatter {
-	publishDate: number;
-}
-
 // Component Script:
 // You can write any JavaScript/TypeScript that you'd like here.
 // It will run during the build, but never in the browser.
@@ -18,8 +14,8 @@ let permalink = 'https://e.segunlean.com/posts';
 
 // Data Fetching: List all Markdown posts in the repo.
 
-let allPosts = await Astro.fetchContent('./*.md');
-allPosts = allPosts.filter(p => !p.draft).sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf());
+let allPosts = await Astro.glob('./*.md');
+allPosts = allPosts.filter(p => !p.frontmatter.draft).sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Emmanuel Segun-Lean's personal website",
   "devDependencies": {
-    "astro": "0.23.7"
+    "astro": "^4.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -20,6 +20,9 @@
   "homepage": "https://github.com/LeanKhan/leankhan.github.io#readme",
   "private": false,
   "dependencies": {
+    "@astrojs/preact": "^3.5.0",
+    "execa": "^9.6.1",
+    "preact": "^10.28.3",
     "rehype-external-links": "^1.0.1"
   }
 }

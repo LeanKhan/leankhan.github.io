@@ -1,15 +1,15 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import BaseFooter from '../components/BaseFooter.astro';
-import BlogPost from '../components/BlogPost.astro';
+import BlogPostContent from '../components/BlogPost.astro';
 import BaseHeader from '../components/BaseHeader.astro';
 
 
-const { content } = Astro.props;
-const { title, description, publishDate, author, heroImage, permalink, alt } = content;
+const { frontmatter } = Astro.props;
+const { title, description, publishDate, author, heroImage, permalink, alt } = frontmatter;
 ---
 
-<html lang={content.lang || 'en'}>
+<html lang={frontmatter.lang || 'en'}>
   <head>
     <BaseHead {title} {description} {permalink} />
   </head>
@@ -20,9 +20,9 @@ const { title, description, publishDate, author, heroImage, permalink, alt } = c
 
 		<!-- <BlogHeader /> -->
 		<div>
-			<BlogPost {title} {author} {heroImage} {publishDate} {alt}>
+			<BlogPostContent {title} {author} {heroImage} {publishDate} {alt}>
 				<slot />
-			</BlogPost>
+			</BlogPostContent>
 
 			<a href="/posts">
 			See other posts

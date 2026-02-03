@@ -1,6 +1,5 @@
 ---
-setup: |
-  import Layout from '../../layouts/BlogPost.astro'
+layout: ../../layouts/BlogPost.astro
 title: When you don't know
 publishDate: 21 November 2020
 name: Emmanuel Segun-Lean

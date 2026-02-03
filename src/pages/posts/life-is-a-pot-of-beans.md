@@ -1,6 +1,5 @@
 ---
-setup: |
-  import Layout from '../../layouts/BlogPost.astro'
+layout: ../../layouts/BlogPost.astro
 title: Life is a Pot of Beans
 publishDate: 27 October 2020
 name: Emmanuel Segun-Lean

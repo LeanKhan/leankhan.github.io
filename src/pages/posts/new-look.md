@@ -1,6 +1,5 @@
 ---
-setup: |
-  import Layout from '../../layouts/BlogPost.astro'
+layout: ../../layouts/BlogPost.astro
 title: Website redesign Feb 2022
 publishDate: 12 Feb 2022
 name: Emmanuel Segun-Lean

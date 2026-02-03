@@ -1,6 +1,5 @@
 ---
-setup: |
-  import Layout from '../../layouts/BlogPost.astro'
+layout: ../../layouts/BlogPost.astro
 title: Software Majors end up in Cyber Cafe
 publishDate: 21 September 2024
 name: Emmanuel Segun-Lean

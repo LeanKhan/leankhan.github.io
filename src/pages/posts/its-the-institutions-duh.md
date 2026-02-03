@@ -1,6 +1,5 @@
 ---
-setup: |
-  import Layout from '../../layouts/BlogPost.astro'
+layout: ../../layouts/BlogPost.astro
 title: it's the institutions, duh
 name: Emmanuel Segun-Lean
 # description: My experience doing HNG Internship 6
