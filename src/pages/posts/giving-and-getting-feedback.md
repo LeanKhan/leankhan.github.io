@@ -1,6 +1,5 @@
 ---
-setup: |
-  import Layout from '../../layouts/BlogPost.astro'
+layout: ../../layouts/BlogPost.astro
 title: Giving and Getting Feedback
 publishDate: 16th April 2023
 name: Emmanuel Segun-Lean

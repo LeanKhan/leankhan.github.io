@@ -1,6 +1,5 @@
 ---
-setup: |
-  import Layout from '../../layouts/BlogPost.astro'
+layout: ../../layouts/BlogPost.astro
 title: Year Review 2019
 name: Emmanuel Segun-Lean
 description: Year 2019 Review

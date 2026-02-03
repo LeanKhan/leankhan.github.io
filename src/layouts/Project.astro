@@ -2,13 +2,6 @@
 const { project } = Astro.props;
 const {name, projectDate, link } = project;
 const tags = project.tags.split(",");
-
-let linkEl = ``;
-
-if(link) {
-    linkEl = `<a class="d-flex justify-content-end ms-auto"
-    href="${link}" target="blank_">check it out</a>`;
-}
 ---
 
     <article id={ name.toLowerCase() }>
@@ -32,7 +25,7 @@ if(link) {
 
         <slot />
 
-            {linkEl}
+            {link && <a class="d-flex justify-content-end ms-auto" href={link} target="_blank">check it out</a>}
 
         </div>
 

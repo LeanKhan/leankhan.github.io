@@ -1,6 +1,5 @@
 ---
-setup: |
-  import Layout from '../../layouts/BlogPost.astro'
+layout: ../../layouts/BlogPost.astro
 title: My HNGi 6 Internship Experience
 name: Emmanuel Segun-Lean
 description: My experience doing HNG Internship 6

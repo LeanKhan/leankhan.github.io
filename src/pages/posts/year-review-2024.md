@@ -1,6 +1,5 @@
 ---
-setup: |
-  import Layout from '../../layouts/BlogPost.astro'
+layout: ../../layouts/BlogPost.astro
 title: Year Review 2024
 publishDate: 31 December 2024
 name: Emmanuel Segun-Lean

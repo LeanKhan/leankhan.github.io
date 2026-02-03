@@ -1,6 +1,5 @@
 ---
-setup: |
-  import Layout from '../../layouts/BlogPost.astro'
+layout: ../../layouts/BlogPost.astro
 title: Just Doing The Things - Year Review 2023
 publishDate: 30 December 2023
 name: Emmanuel Segun-Lean

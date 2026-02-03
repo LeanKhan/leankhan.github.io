@@ -1,6 +1,5 @@
 ---
-setup: |
-  import Layout from '../../layouts/BlogPost.astro'
+layout: ../../layouts/BlogPost.astro
 title: To my Lockdown Lovers
 publishDate: 21 October 2020
 name: Emmanuel Segun-Lean
