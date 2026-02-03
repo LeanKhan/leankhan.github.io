@@ -1,6 +1,5 @@
 ---
-setup: |
-  import Layout from '../../layouts/BlogPost.astro'
+layout: ../../layouts/BlogPost.astro
 title: How to upgrade Mongodb 4.0 to 4.2 without senrenren
 publishDate: 2020-08-21 16:05:52
 name: Emmanuel Segun-Lean

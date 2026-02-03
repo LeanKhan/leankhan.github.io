@@ -1,6 +1,5 @@
 ---
-setup: |
-  import Layout from '../../layouts/BlogPost.astro'
+layout: ../../layouts/BlogPost.astro
 title: My Struggles Writing
 publishDate: __ July 2022
 name: Emmanuel Segun-Lean

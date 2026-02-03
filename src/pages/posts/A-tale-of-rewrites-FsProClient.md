@@ -1,6 +1,5 @@
 ---
-setup: |
-  import Layout from '../../layouts/BlogPost.astro'
+layout: ../../layouts/BlogPost.astro
 title: "A Tale of Rewrites: FsProClient"
 publishDate: 2019-08-21T21:28:28.056Z
 name: Emmanuel Segun-Lean

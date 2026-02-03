@@ -1,6 +1,5 @@
 ---
-setup: |
-  import Layout from '../../layouts/BlogPost.astro'
+layout: ../../layouts/BlogPost.astro
 title: Hello world!
 publishDate: 12 Sep 2021
 name: Emmanuel Segun-Lean
