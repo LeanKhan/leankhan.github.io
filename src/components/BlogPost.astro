@@ -18,7 +18,7 @@ const { title, author, publishDate, heroImage, alt } = Astro.props;
 			<header>
 				{heroImage && <img width="720" height="420" class="hero-image" loading="lazy" src={heroImage} alt={alt} />}
 				<p class="publish-date">{publishDate}</p>
-				<h2 class="title">{title}</h2>
+				<h3 class="title">{title}</h3>
 				<Author name="Emmanuel" />
 			</header>
 			<main>
@@ -82,7 +82,7 @@ const { title, author, publishDate, heroImage, alt } = Astro.props;
 	}
 
 	.title {
-		font-size: 2rem;
+		font-size: 1.5rem;
 		font-weight: 700;
 	}
 		/**

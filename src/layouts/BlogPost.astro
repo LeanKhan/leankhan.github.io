@@ -32,5 +32,61 @@ const { title, description, publishDate, author, heroImage, permalink, alt } = f
 		</div>
 
 		<BaseFooter />
+
+		<!-- Image lightbox overlay -->
+		<div id="image-lightbox" class="image-lightbox">
+			<img id="lightbox-img" src="" alt="" />
+		</div>
+
+		<style>
+			.image-lightbox {
+				display: none;
+				position: fixed;
+				inset: 0;
+				z-index: 9999;
+				background: rgba(0, 0, 0, 0.85);
+				cursor: zoom-out;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.image-lightbox.active {
+				display: flex;
+			}
+
+			.image-lightbox img {
+				max-width: 90vw;
+				max-height: 90vh;
+				object-fit: contain;
+				border-radius: 4px;
+			}
+
+			.main-content img:not(.no-lightbox) {
+				cursor: zoom-in;
+			}
+		</style>
+
+		<script>
+			const lightbox = document.getElementById('image-lightbox');
+			const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement | null;
+
+			document.querySelector('.main-content')?.addEventListener('click', (e) => {
+				if (e.target instanceof HTMLImageElement && !e.target.classList.contains('no-lightbox') && lightboxImg) {
+					lightboxImg.src = e.target.src;
+					lightboxImg.alt = e.target.alt;
+					lightbox?.classList.add('active');
+				}
+			});
+
+			lightbox?.addEventListener('click', () => {
+				lightbox.classList.remove('active');
+			});
+
+			document.addEventListener('keydown', (e) => {
+				if (e.key === 'Escape') {
+					lightbox?.classList.remove('active');
+				}
+			});
+		</script>
 	</body>
 </html>
