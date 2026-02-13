@@ -1,9 +1,10 @@
 ---
 layout: ../../layouts/BlogPost.astro
 title: Software Majors end up in Cyber Cafe
-publishDate: 21 September 2024
+publishDate: 7 November 2020
 name: Emmanuel Segun-Lean
 description: Why I think Software Majors from my University have a non-zero chance of ending up in Cyber Cafes.
+pinned: true
 ---
 
 **Originally written 7th November 2020.**
