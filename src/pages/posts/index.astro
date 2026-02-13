@@ -17,6 +17,8 @@ let permalink = 'https://e.segunlean.com/posts';
 let allPosts = await Astro.glob('./*.md');
 allPosts = allPosts.filter(p => !p.frontmatter.draft).sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
 
+let pinnedPosts = allPosts.filter(p => p.frontmatter.pinned);
+
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
@@ -58,6 +60,20 @@ allPosts = allPosts.filter(p => !p.frontmatter.draft).sort((a, b) => new Date(b.
 				font-size: 2.5rem;
 				font-weight: 700;
 			}
+
+			.pinned-section {
+				margin-bottom: 2rem;
+				padding-bottom: 2rem;
+				border-bottom: 4px solid var(--theme-divider);
+			}
+
+			.pinned-list {
+				margin: 0;
+			}
+
+			.section-title {
+				font-size: 0.8rem;
+			}
 		</style>
 	</head>
 
@@ -66,9 +82,20 @@ allPosts = allPosts.filter(p => !p.frontmatter.draft).sort((a, b) => new Date(b.
     <BaseHeader />
       <main class="main-content">
 	  <section>
-					<h1 class="page-title text-light">{title}</h1>
+					<h3 class="page-title text-light">{title}</h3>
 					<!-- <p>{description}</p> -->
 				</section>
+				{pinnedPosts.length > 0 && (
+				<section class="pinned-section" aria-label="Pinned posts">
+					<h5 class="section-title text-light">Pinned</h5>
+					<p>These are some of my favorite posts</p>
+					<p class="pinned-list">
+						{pinnedPosts.map((p, i) => (
+							<>{i > 0 && ", "}<a href={p.url}>{p.frontmatter.title}</a></>
+						))}
+					</p>
+				</section>
+				)}
 				<section aria-label="Blog post list">
 					{allPosts.map((p) => <BlogPostPreview post={p} />)}
 				</section>

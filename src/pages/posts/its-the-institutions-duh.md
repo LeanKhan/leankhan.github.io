@@ -3,11 +3,11 @@ layout: ../../layouts/BlogPost.astro
 title: it's the institutions, duh
 name: Emmanuel Segun-Lean
 # description: My experience doing HNG Internship 6
-publishDate: 2020-02-29T23:07:55.710Z
+publishDate: 29 February 2020 # 2020-02-29T23:07:55.710Z
 lastUpdated:
 ---
 
-## like, duh ( ͡ᵔ ͜ʖ ͡ᵔ )
+### like, duh ( ͡ᵔ ͜ʖ ͡ᵔ )
 
 At the beginning of the year, I started a habit of reading a book every month and writing about what I read at the end of the month. Last year I began a similar commitment. The book for January was ‘Why Nations Fail’ by Daron Acemoglu and James Robinson. I didn’t finish, I didn’t even read any book last year :/
 

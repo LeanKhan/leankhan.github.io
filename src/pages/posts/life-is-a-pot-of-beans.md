@@ -4,6 +4,7 @@ title: Life is a Pot of Beans
 publishDate: 27 October 2020
 name: Emmanuel Segun-Lean
 description: One of the Posts I did for StallionReview, the unofficial AUN student online magazine hosted on Bubbl, in 2020.
+pinned: true
 ---
 
 ![cover image](/assets/images/life-is-a-pot-of-beans-cover.jpg "Life is a pot of beans")
