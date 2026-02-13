@@ -1,15 +1,16 @@
 ---
 export interface Props {
 	post: any;
+	pinned?: boolean;
 }
 
-const { post } = Astro.props;
+const { post, pinned } = Astro.props;
 ---
 
 <article class="post-preview">
 	<header>
 		<p class="publish-date">{post.frontmatter.publishDate}</p>
-		<a href={post.url}><h3>{post.frontmatter.title}</h3></a>
+		<a href={post.url}><h3>{pinned && <span class="pin-badge">pinned</span>}{post.frontmatter.title}</h3></a>
 	</header>
 	<p>{post.frontmatter.description}</p>
 	<a href={post.url}>Read more</a>
@@ -34,6 +35,11 @@ const { post } = Astro.props;
 		text-align: left;
 	}
 
+	h3 {
+		font-size: 1.25rem;
+		margin: 0;
+	}
+
 	.title,
 	.author,
 	.publish-date {
@@ -50,5 +56,18 @@ const { post } = Astro.props;
 		font-size: 2.25rem;
 		font-weight: 700;
 		color: var(--theme-text);
+	}
+
+	.pin-badge {
+		font-size: 0.75rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		background-color: var(--theme-bg-offset, #f0f0f0);
+		color: var(--theme-text-lighter, #666);
+		padding: 0.15em 0.5em;
+		border-radius: 4px;
+		margin-right: 0.5em;
+		vertical-align: middle;
 	}
 </style>

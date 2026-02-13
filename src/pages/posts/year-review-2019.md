@@ -3,7 +3,7 @@ layout: ../../layouts/BlogPost.astro
 title: Year Review 2019
 name: Emmanuel Segun-Lean
 description: Year 2019 Review
-publishDate: 2019-12-08 16:17:33
+publishDate: 8 December 2019
 ---
 
 👏🏾 👏🏾 Year Review 👏🏾 👏🏾

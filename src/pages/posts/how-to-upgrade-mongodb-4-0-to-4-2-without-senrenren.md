@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPost.astro
 title: How to upgrade Mongodb 4.0 to 4.2 without senrenren
-publishDate: 2020-08-21 16:05:52
+publishDate: 21 August 2020 # 2020-08-21 16:05:52
 name: Emmanuel Segun-Lean
 description: I needed to update my MongdoDB from 4.0 to 4.2
 ---

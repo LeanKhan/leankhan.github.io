@@ -3,7 +3,7 @@ layout: ../../layouts/BlogPost.astro
 title: My HNGi 6 Internship Experience
 name: Emmanuel Segun-Lean
 description: My experience doing HNG Internship 6
-publishDate: 2019-12-1 20:52:40
+publishDate: 1 December 2019 # 2019-12-1 20:52:40
 ---
 
 ### My HING Internship 6 Experience
