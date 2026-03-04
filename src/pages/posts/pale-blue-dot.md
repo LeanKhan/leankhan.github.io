@@ -2,8 +2,8 @@
 layout: ../../layouts/BlogPost.astro
 title: Pale Blue Dot
 name: Emmanuel Segun-Lean
-publishDate: 3 March 2026
-lastUpdated: 3 March 2026
+publishDate: 4 March 2026
+lastUpdated: 4 March 2026
 description: Alternate title; you are kind of a big deal. Facts ¯\_(ツ)_/¯
 ---
 
