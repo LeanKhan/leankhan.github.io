@@ -33,7 +33,7 @@ There are an almost infinite number of possible lives that could have existed, a
 
 Be Kind.
 
-When you see another person, recognize that they also are the result of a celestial roll of the dice. They also shouldn’t even be here, but they are. So treat them with respect and dignity, because mehn e no easy.
+When you see another person, recognize that they also are the result of a celestial roll of the dice. They also shouldn’t even be here, but they are. So treat them with respect and dignity, because mehn, e no easy.
 
 ![cover image](/assets/images/pale-blue-dot.webp "Updated version of the 'Pale Blue Dot' image of Earth taken by Voyager to celebrate the photograph's 30th anniversary")
 <figure>(Image credit: NASA/JPL-Caltech)</figure>
