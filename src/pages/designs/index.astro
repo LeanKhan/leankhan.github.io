@@ -1,0 +1,287 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import BaseFooter from '../../components/BaseFooter.astro';
+import BaseHeader from '../../components/BaseHeader.astro';
+
+let title = 'Designs';
+let description = 'Selected design work by Emmanuel Segun-Lean';
+let permalink = 'https://e.segunlean.com/designs';
+
+const getSlug = (file: string) => file.split(/[\\/]/).pop()?.replace(/\.md$/, '') ?? '';
+const normalizeTags = (tags = '') => tags.split(',').map((tag) => tag.trim()).filter(Boolean);
+
+let allDesigns = await Astro.glob('../../meta/designs/*.md');
+allDesigns = allDesigns
+  .filter((design) => !design.frontmatter.draft)
+  .sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf())
+  .map((design) => ({
+    ...design,
+    slug: getSlug(design.file),
+    tags: normalizeTags(design.frontmatter.tags),
+  }));
+
+const allTags = Array.from(new Set(allDesigns.flatMap((design) => design.tags))).sort((a, b) => a.localeCompare(b));
+---
+
+<html lang="en">
+  <head>
+    <BaseHead {title} {description} {permalink} />
+    <style>
+      .design-intro {
+        margin-bottom: 2rem;
+        max-width: 62ch;
+      }
+
+      .design-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .filter-button {
+        border: 1px solid rgba(var(--color-green-rgb), 0.55);
+        background: transparent;
+        color: var(--theme-text);
+        border-radius: 4px;
+        padding: 0.35rem 0.65rem;
+        line-height: 1.1;
+      }
+
+      .filter-button[aria-pressed="true"] {
+        background: var(--theme-accent);
+        color: var(--color-black);
+      }
+
+      .design-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.25rem;
+      }
+
+      .design-card {
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 6px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .design-card[hidden] {
+        display: none;
+      }
+
+      .design-image-button {
+        display: block;
+        width: 100%;
+        padding: 0;
+        border: 0;
+        background: #111;
+        cursor: zoom-in;
+      }
+
+      .design-image {
+        display: block;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+      }
+
+      .design-card-body {
+        padding: 1rem;
+      }
+
+      .design-card-title {
+        margin: 0 0 0.5rem;
+        font-family: var(--font-mono);
+        font-size: 1rem;
+        color: var(--theme-text-lighter);
+      }
+
+      .design-description {
+        margin-bottom: 0.75rem;
+        color: var(--theme-text);
+      }
+
+      .design-actions {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .design-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .design-tags li {
+        font-size: 0.75rem;
+      }
+
+      .design-lightbox {
+        width: min(96vw, 1200px);
+        border: 0;
+        padding: 0;
+        background: transparent;
+        color: var(--theme-text);
+      }
+
+      .design-lightbox::backdrop {
+        background: rgba(0, 0, 0, 0.85);
+      }
+
+      .lightbox-inner {
+        background: var(--theme-bg);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 6px;
+        overflow: hidden;
+      }
+
+      .lightbox-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.75rem 1rem;
+      }
+
+      .lightbox-title {
+        margin: 0;
+        font-family: var(--font-mono);
+        font-size: 1rem;
+      }
+
+      .lightbox-close {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 4px;
+        background: transparent;
+        color: var(--theme-text);
+        line-height: 1;
+        padding: 0.35rem 0.55rem;
+      }
+
+      .lightbox-image {
+        display: block;
+        width: 100%;
+        max-height: 82vh;
+        object-fit: contain;
+        background: #050505;
+      }
+
+      .lightbox-description {
+        padding: 0.75rem 1rem 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-wrapper section md-section">
+      <BaseHeader />
+      <main class="main-content">
+        <section class="design-intro">
+          <h3 class="page-title text-light">{title}</h3>
+          <p>Selected visual design work, experiments, and branding work. This will be filled in small small :D</p>
+        </section>
+
+        {allTags.length > 0 && (
+          <section class="design-filters" aria-label="Filter designs by tag">
+            <button class="filter-button pixel-text" type="button" data-filter="all" aria-pressed="true">All</button>
+            {allTags.map((tag) => (
+              <button class="filter-button pixel-text" type="button" data-filter={tag.toLowerCase()} aria-pressed="false">{tag}</button>
+            ))}
+          </section>
+        )}
+
+        <section class="design-grid" aria-label="Design portfolio">
+          {allDesigns.map((design) => {
+            const designTitle = design.frontmatter.title;
+            const designDescription = design.frontmatter.description;
+            const designImage = design.frontmatter.image;
+            const detailHref = design.frontmatter.hasPage ? `/designs/${design.slug}` : design.frontmatter.link;
+
+            return (
+              <article class="design-card" data-tags={design.tags.map((tag) => tag.toLowerCase()).join(' ')}>
+                <button
+                  class="design-image-button"
+                  type="button"
+                  data-fullscreen
+                  data-image={designImage}
+                  data-title={designTitle}
+                  data-description={designDescription}
+                  aria-label={`View ${designTitle} fullscreen`}
+                >
+                  <img class="design-image" src={designImage} alt={design.frontmatter.alt || designTitle} loading="lazy" />
+                </button>
+                <div class="design-card-body">
+                  <h4 class="design-card-title">{designTitle}</h4>
+                  <p class="design-description">{designDescription}</p>
+                  <div class="design-actions">
+                    <ul class="design-tags" aria-label={`${designTitle} tags`}>
+                      {design.tags.map((tag) => <li class="pixel-text badge bg-secondary">{tag}</li>)}
+                    </ul>
+                    {detailHref && <a href={detailHref}>open</a>}
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </section>
+      </main>
+    </div>
+
+    <dialog class="design-lightbox" id="design-lightbox" aria-labelledby="lightbox-title">
+      <div class="lightbox-inner">
+        <div class="lightbox-header">
+          <p class="lightbox-title" id="lightbox-title"></p>
+          <button class="lightbox-close" type="button" aria-label="Close fullscreen view">Close</button>
+        </div>
+        <img class="lightbox-image" alt="" />
+        <p class="lightbox-description"></p>
+      </div>
+    </dialog>
+
+    <BaseFooter />
+
+    <script>
+      const filterButtons = document.querySelectorAll('[data-filter]');
+      const designCards = document.querySelectorAll('.design-card');
+
+      filterButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const selectedTag = button.getAttribute('data-filter');
+
+          filterButtons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+          designCards.forEach((card) => {
+            const tags = card.getAttribute('data-tags') || '';
+            card.hidden = selectedTag !== 'all' && !tags.split(' ').includes(selectedTag || '');
+          });
+        });
+      });
+
+      const lightbox = document.querySelector('#design-lightbox');
+      const lightboxImage = lightbox?.querySelector('.lightbox-image');
+      const lightboxTitle = lightbox?.querySelector('.lightbox-title');
+      const lightboxDescription = lightbox?.querySelector('.lightbox-description');
+      const closeButton = lightbox?.querySelector('.lightbox-close');
+
+      document.querySelectorAll('[data-fullscreen]').forEach((button) => {
+        button.addEventListener('click', () => {
+          if (!(lightbox instanceof HTMLDialogElement) || !(lightboxImage instanceof HTMLImageElement)) return;
+
+          lightboxImage.src = button.getAttribute('data-image') || '';
+          lightboxImage.alt = button.getAttribute('data-title') || '';
+          if (lightboxTitle) lightboxTitle.textContent = button.getAttribute('data-title') || '';
+          if (lightboxDescription) lightboxDescription.textContent = button.getAttribute('data-description') || '';
+          lightbox.showModal();
+        });
+      });
+
+      closeButton?.addEventListener('click', () => {
+        if (lightbox instanceof HTMLDialogElement) lightbox.close();
+      });
+    </script>
+  </body>
+</html>

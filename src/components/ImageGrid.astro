@@ -1,0 +1,188 @@
+---
+export interface ImageGridItem {
+  src: string;
+  alt?: string;
+  title?: string;
+  description?: string;
+}
+
+export interface Props {
+  images: ImageGridItem[];
+  label?: string;
+}
+
+const { images = [], label = 'Image grid' } = Astro.props;
+---
+
+{images.length > 0 && (
+  <section class="image-grid-section" aria-label={label} data-image-grid>
+    <div class="image-grid">
+      {images.map((image) => (
+        <figure class="image-grid-item">
+          <button
+            class="image-grid-button"
+            type="button"
+            data-grid-image={image.src}
+            data-grid-title={image.title || image.alt || ''}
+            data-grid-description={image.description || ''}
+            aria-label={`View ${image.title || image.alt || 'image'} fullscreen`}
+          >
+            <img src={image.src} alt={image.alt || image.title || ''} loading="lazy" />
+          </button>
+          {(image.title || image.description) && (
+            <figcaption>
+              {image.title && <strong>{image.title}</strong>}
+              {image.description && <span>{image.description}</span>}
+            </figcaption>
+          )}
+        </figure>
+      ))}
+    </div>
+
+    <dialog class="image-grid-lightbox" aria-label="Fullscreen image view">
+      <div class="image-grid-lightbox-inner">
+        <div class="image-grid-lightbox-header">
+          <p class="image-grid-lightbox-title"></p>
+          <button class="image-grid-lightbox-close" type="button">Close</button>
+        </div>
+        <img class="image-grid-lightbox-image" alt="" />
+        <p class="image-grid-lightbox-description"></p>
+      </div>
+    </dialog>
+  </section>
+)}
+
+<style>
+  .image-grid-section {
+    margin: 2rem 0;
+  }
+
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+
+  .image-grid-item {
+    margin: 0;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 6px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .image-grid-button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: #050505;
+    cursor: zoom-in;
+  }
+
+  .image-grid img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .image-grid-item figcaption {
+    display: grid;
+    gap: 0.25rem;
+    padding: 0.75rem;
+    color: var(--theme-text);
+  }
+
+  .image-grid-item figcaption strong {
+    color: var(--theme-text-lighter);
+  }
+
+  .image-grid-item figcaption span {
+    font-size: 0.9rem;
+  }
+
+  .image-grid-lightbox {
+    width: min(96vw, 1200px);
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: var(--theme-text);
+  }
+
+  .image-grid-lightbox::backdrop {
+    background: rgba(0, 0, 0, 0.85);
+  }
+
+  .image-grid-lightbox-inner {
+    background: var(--theme-bg);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .image-grid-lightbox-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .image-grid-lightbox-title {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+  }
+
+  .image-grid-lightbox-close {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+    background: transparent;
+    color: var(--theme-text);
+    line-height: 1;
+    padding: 0.35rem 0.55rem;
+  }
+
+  .image-grid-lightbox-image {
+    display: block;
+    width: 100%;
+    max-height: 82vh;
+    object-fit: contain;
+    background: #050505;
+  }
+
+  .image-grid-lightbox-description {
+    padding: 0.75rem 1rem 1rem;
+  }
+</style>
+
+<script>
+  document.querySelectorAll('[data-image-grid]').forEach((grid) => {
+    if (!(grid instanceof HTMLElement) || grid.dataset.ready === 'true') return;
+
+    grid.dataset.ready = 'true';
+
+    const lightbox = grid.querySelector('.image-grid-lightbox');
+    const image = grid.querySelector('.image-grid-lightbox-image');
+    const title = grid.querySelector('.image-grid-lightbox-title');
+    const description = grid.querySelector('.image-grid-lightbox-description');
+    const closeButton = grid.querySelector('.image-grid-lightbox-close');
+
+    grid.querySelectorAll('[data-grid-image]').forEach((button) => {
+      button.addEventListener('click', () => {
+        if (!(lightbox instanceof HTMLDialogElement) || !(image instanceof HTMLImageElement)) return;
+
+        image.src = button.getAttribute('data-grid-image') || '';
+        image.alt = button.getAttribute('data-grid-title') || '';
+        if (title) title.textContent = button.getAttribute('data-grid-title') || '';
+        if (description) description.textContent = button.getAttribute('data-grid-description') || '';
+        lightbox.showModal();
+      });
+    });
+
+    closeButton?.addEventListener('click', () => {
+      if (lightbox instanceof HTMLDialogElement) lightbox.close();
+    });
+  });
+</script>

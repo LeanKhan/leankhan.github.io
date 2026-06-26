@@ -1,6 +1,7 @@
 ---
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
+const isDesigns = currentPath === "designs" || currentPath.startsWith("designs/");
 ---
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -19,6 +20,9 @@ const currentPath = pathname.slice(1); // remove the first "/"
             </li>
             <li class="nav-item">
               <a class={`nav-link ${currentPath === "projects" ? "active" : ""}`} href="/projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class={`nav-link ${isDesigns ? "active" : ""}`} href="/designs">Designs</a>
             </li>
             <li class="nav-item">
               <a class={`nav-link ${currentPath === "posts" ? "active" : ""}`} href="/posts">Posts</a>
