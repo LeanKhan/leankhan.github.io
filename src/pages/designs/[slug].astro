@@ -1,0 +1,90 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import BaseFooter from '../../components/BaseFooter.astro';
+import BaseHeader from '../../components/BaseHeader.astro';
+import ImageGrid from '../../components/ImageGrid.astro';
+
+export async function getStaticPaths() {
+  const allDesigns = await Astro.glob('../../meta/designs/*.md');
+  const getSlug = (file: string) => file.split(/[\\/]/).pop()?.replace(/\.md$/, '') ?? '';
+  const normalizeTags = (tags = '') => tags.split(',').map((tag) => tag.trim()).filter(Boolean);
+
+  return allDesigns
+    .filter((design) => !design.frontmatter.draft && design.frontmatter.hasPage)
+    .map((design) => ({
+      params: { slug: getSlug(design.file) },
+      props: {
+        design,
+        tags: normalizeTags(design.frontmatter.tags),
+      },
+    }));
+}
+
+const { design, tags } = Astro.props;
+const title = design.frontmatter.title;
+const description = design.frontmatter.description;
+const permalink = `https://e.segunlean.com/designs/${Astro.params.slug}`;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead {title} {description} {permalink} />
+    <style>
+      .design-detail {
+        max-width: 900px;
+      }
+
+      .design-detail-header {
+        margin-bottom: 1.5rem;
+      }
+
+      .design-detail-title {
+        margin-bottom: 0.75rem;
+      }
+
+      .design-detail-image {
+        width: 100%;
+        max-height: 75vh;
+        object-fit: contain;
+        background: #050505;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 6px;
+        margin-bottom: 1.5rem;
+      }
+
+      .design-detail-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+        margin: 0 0 1rem;
+        padding: 0;
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-wrapper section md-section">
+      <BaseHeader />
+      <main class="main-content design-detail">
+        <p><a href="/designs">Back to designs</a></p>
+        <header class="design-detail-header">
+          <h3 class="design-detail-title">{title}</h3>
+          <ul class="design-detail-tags" aria-label={`${title} tags`}>
+            {tags.map((tag) => <li class="pixel-text badge bg-secondary">{tag}</li>)}
+          </ul>
+          <p>{description}</p>
+        </header>
+
+        <img class="design-detail-image" src={design.frontmatter.image} alt={design.frontmatter.alt || title} />
+
+        <ImageGrid images={design.frontmatter.gallery || []} label={`${title} image gallery`} />
+
+        <article>
+          <design.Content />
+        </article>
+      </main>
+    </div>
+
+    <BaseFooter />
+  </body>
+</html>
