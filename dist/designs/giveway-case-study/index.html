@@ -1,0 +1,236 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-dgwipaux> <head><!-- Global Metadata --><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta charSet="utf-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/x-icon" href="/favicon.ico"><!-- Primary Meta Tags --><title>Giveway: a product design case study</title><meta name="title" content="Giveway: a product design case study"><meta name="description" content="A game where a crowd decides who gets a stranger's money. From a first experiment called Gladiator to Giveway, and the design decisions that are hard to take back."><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://e.segunlean.com/designs/giveway-case-study"><meta property="og:title" content="Giveway: a product design case study"><meta property="og:description" content="A game where a crowd decides who gets a stranger's money. From a first experiment called Gladiator to Giveway, and the design decisions that are hard to take back."><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://e.segunlean.com/designs/giveway-case-study"><meta property="twitter:title" content="Giveway: a product design case study"><meta property="twitter:description" content="A game where a crowd decides who gets a stranger's money. From a first experiment called Gladiator to Giveway, and the design decisions that are hard to take back."><!-- Fonts --><link rel="preconnect" href="https://fonts.gstatic.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;700&display=swap"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"><link rel="stylesheet" href="/_astro/A-tale-of-rewrites-FsProClient.Bk2-t3MT.css">
+<style>.image-grid-section[data-astro-cid-lijdpcmf]{margin:2rem 0}.image-grid[data-astro-cid-lijdpcmf]{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}.image-grid-item[data-astro-cid-lijdpcmf]{margin:0;border:1px solid rgba(255,255,255,.16);border-radius:6px;overflow:hidden;background:#ffffff08}.image-grid-button[data-astro-cid-lijdpcmf]{display:block;width:100%;padding:0;border:0;background:#050505;cursor:zoom-in}.image-grid[data-astro-cid-lijdpcmf] img[data-astro-cid-lijdpcmf]{display:block;width:100%;aspect-ratio:4 / 3;object-fit:cover}.image-grid-item[data-astro-cid-lijdpcmf] figcaption[data-astro-cid-lijdpcmf]{display:grid;gap:.25rem;padding:.75rem;color:var(--theme-text)}.image-grid-item[data-astro-cid-lijdpcmf] figcaption[data-astro-cid-lijdpcmf] strong[data-astro-cid-lijdpcmf]{color:var(--theme-text-lighter)}.image-grid-item[data-astro-cid-lijdpcmf] figcaption[data-astro-cid-lijdpcmf] span[data-astro-cid-lijdpcmf]{font-size:.9rem}.image-grid-lightbox[data-astro-cid-lijdpcmf]{width:min(96vw,1200px);border:0;padding:0;background:transparent;color:var(--theme-text)}.image-grid-lightbox[data-astro-cid-lijdpcmf]::backdrop{background:#000000d9}.image-grid-lightbox-inner[data-astro-cid-lijdpcmf]{background:var(--theme-bg);border:1px solid rgba(255,255,255,.2);border-radius:6px;overflow:hidden}.image-grid-lightbox-header[data-astro-cid-lijdpcmf]{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.75rem 1rem}.image-grid-lightbox-title[data-astro-cid-lijdpcmf]{margin:0;font-family:var(--font-mono);font-size:1rem}.image-grid-lightbox-close[data-astro-cid-lijdpcmf]{border:1px solid rgba(255,255,255,.25);border-radius:4px;background:transparent;color:var(--theme-text);line-height:1;padding:.35rem .55rem}.image-grid-lightbox-image[data-astro-cid-lijdpcmf]{display:block;width:100%;max-height:82vh;object-fit:contain;background:#050505}.image-grid-lightbox-description[data-astro-cid-lijdpcmf]{padding:.75rem 1rem 1rem}.design-detail[data-astro-cid-dgwipaux]{max-width:900px}.design-detail-header[data-astro-cid-dgwipaux]{margin-bottom:1.5rem}.design-detail-title[data-astro-cid-dgwipaux]{margin-bottom:.75rem}.design-detail-image[data-astro-cid-dgwipaux]{width:100%;max-height:75vh;object-fit:contain;background:#050505;border:1px solid rgba(255,255,255,.16);border-radius:6px;margin-bottom:1.5rem}.design-detail-tags[data-astro-cid-dgwipaux]{display:flex;flex-wrap:wrap;gap:.35rem;margin:0 0 1rem;padding:0;list-style:none}
+</style></head> <body data-astro-cid-dgwipaux> <div class="main-wrapper section md-section" data-astro-cid-dgwipaux> <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <div class="container"> <a class="navbar-brand" href="/"> <img src="/assets/images/abstract-leankhan-logo-small.png" width="40px" style="border-radius: 4px;"> </a> <button class="navbar-toggler" id="base-navbar-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> <div class="collapse navbar-collapse" id="navbarContent"> <ul class="navbar-nav mr-auto"> <li class="nav-item"> <a class="nav-link " href="/">Home</a> </li> <li class="nav-item"> <a class="nav-link " href="/projects">Projects</a> </li> <li class="nav-item"> <a class="nav-link active" href="/designs">Designs</a> </li> <li class="nav-item"> <a class="nav-link " href="/posts">Posts</a> </li> </ul> <!-- <form class="form-inline my-2 my-md-0">
+            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+          </form> --> </div> </div> </nav> <main class="main-content design-detail" data-astro-cid-dgwipaux> <p data-astro-cid-dgwipaux><a href="/designs" data-astro-cid-dgwipaux>Back to designs</a></p> <header class="design-detail-header" data-astro-cid-dgwipaux> <h3 class="design-detail-title" data-astro-cid-dgwipaux>Giveway: a product design case study</h3> <ul class="design-detail-tags" aria-label="Giveway: a product design case study tags" data-astro-cid-dgwipaux> <li class="pixel-text badge bg-secondary" data-astro-cid-dgwipaux><a href="/designs?tag=product-design" style="color: inherit; text-decoration: none;" data-astro-cid-dgwipaux>product design</a></li><li class="pixel-text badge bg-secondary" data-astro-cid-dgwipaux><a href="/designs?tag=case-study" style="color: inherit; text-decoration: none;" data-astro-cid-dgwipaux>case study</a></li><li class="pixel-text badge bg-secondary" data-astro-cid-dgwipaux><a href="/designs?tag=fintech" style="color: inherit; text-decoration: none;" data-astro-cid-dgwipaux>fintech</a></li><li class="pixel-text badge bg-secondary" data-astro-cid-dgwipaux><a href="/designs?tag=systems" style="color: inherit; text-decoration: none;" data-astro-cid-dgwipaux>systems</a></li> </ul> <p data-astro-cid-dgwipaux>A game where a crowd decides who gets a stranger&#39;s money. From a first experiment called Gladiator to Giveway, and the design decisions that are hard to take back.</p> </header> <img class="design-detail-image" src="/assets/images/giveway/arena-home-page.png" alt="The Gladiator home page for the First Giveaway, a ₦50k pool with a voting countdown" data-astro-cid-dgwipaux> <script type="module">document.querySelectorAll("[data-image-grid]").forEach(e=>{if(!(e instanceof HTMLElement)||e.dataset.ready==="true")return;e.dataset.ready="true";const i=e.querySelector(".image-grid-lightbox"),a=e.querySelector(".image-grid-lightbox-image"),r=e.querySelector(".image-grid-lightbox-title"),l=e.querySelector(".image-grid-lightbox-description"),o=e.querySelector(".image-grid-lightbox-close");e.querySelectorAll("[data-grid-image]").forEach(t=>{t.addEventListener("click",()=>{!(i instanceof HTMLDialogElement)||!(a instanceof HTMLImageElement)||(a.src=t.getAttribute("data-grid-image")||"",a.alt=t.getAttribute("data-grid-title")||"",r&&(r.textContent=t.getAttribute("data-grid-title")||""),l&&(l.textContent=t.getAttribute("data-grid-description")||""),i.showModal())})}),o?.addEventListener("click",()=>{i instanceof HTMLDialogElement&&i.close()})});</script> <article data-astro-cid-dgwipaux> <p><em>By Emmanuel Segun-Lean · 18 October 2026</em></p>
+<p>Giveway started as a small experiment I called Gladiator, and it started because of one doubt: when someone on X says they picked a random winner for their giveaway, how do we know? We don’t. So I let the public decide instead. I ran one live round in September 2026, and even though the numbers were small, what it did for the people who took part was enough to make me rebuild the whole thing as Giveway, now with contributions, sharing and fairer exposure. A second giveaway is running right now, and I’ll write about that one in its own blog post.</p>
+<p>I did all of it myself: the concept, the rules, the interface and copy, the Go and Next.js code, and the production deploys. (Yes, even the deploys. More on that later.)</p>
+<h2 id="where-it-started">Where it started</h2>
+<p>You’ve seen these tweets. Someone announces a giveaway, “repost and follow the rules”, and says they’ll pick a random winner. Then a winner is announced and that’s it. Nobody can tell how that person was actually picked, or whether there was bias. Maybe it was random, maybe it was their cousin. Who knows.</p>
+<p><img src="/assets/images/giveway/twitter_giveaway.png" alt="A tweet announcing a ₦1,000,000 giveaway, with 100K to 10 people, &#x22;repost and follow the rules&#x22;, and two hours to enter"></p>
+<p>So I thought, what if the public picks the winners?</p>
+<p>My first framing was honestly a bit cynical: <em>I am taking the gladiator and removing the emperor.</em> People always have opinions on how someone else’s money should be spent. Toh, here’s your chance. Instead of winner-takes-all, the pool is split between bids, so more people get a slice. I hoped it would encourage more giving online, and give people a way to say which requests they think are worth funding.</p>
+<p>I wanted it to feel playful so nobody would feel pressure to ask for anything, which is why I named it after Roman fighters whose fate was in the hands of the crowd.</p>
+<h2 id="how-it-works">How it works</h2>
+<p>Everyone who enters is a player and gets 100 Kindness Points (KP). You read other people’s bids (“I want to buy a new bike”), spread your KP across the ones you like, and you can make a bid of your own. When voting ends, the pool is split between bids based on how much KP each one earned.</p>
+<p><img src="/assets/images/giveway/arena-home-page.png" alt="The Gladiator home page for &#x22;First Giveaway&#x22;: Help Emmanuel share ₦50k. You decide. A note from Emmanuel, and a countdown to the end of voting"></p>
+<h2 id="experiment-1-six-hypotheses">Experiment 1: six hypotheses</h2>
+<p>Before the first round I wrote down six hypotheses, each with a way to measure it. The live giveaway (round 4) ran from 31 August to 4 September with a ₦50,000 pool, and I shared it on 1 September.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Hypothesis</th><th>Measure</th><th>What I found</th></tr></thead><tbody><tr><td>1. People will help decide how a stranger’s money is shared</td><td>Visitors who allocate KP</td><td>About 250 visitors viewed pages in the launch week. 15 joined, 10 of them gave KP, and the average player spent 68 of 100 KP</td></tr><tr><td>2. Collective allocation is enjoyable</td><td>Enjoyment score, repeat participation</td><td>All 6 survey respondents said they’d play again</td></tr><tr><td>3. Seeing diverse requests encourages perspective-taking</td><td>Survey, reading behaviour</td><td>71% of the KP spent went to other people’s bids. Reading behaviour wasn’t recorded in round one</td></tr><tr><td>4. People will share it</td><td>Share rate, referral traffic</td><td>Not measured: share tracking came later</td></tr><tr><td>5. Taking part creates willingness to give</td><td>Share who’d contribute, actual contributions</td><td>No contributions in round one, and the survey didn’t ask. Contributions came afterwards</td></tr><tr><td>6. A shared link recruits beyond the donor’s network</td><td>Share of participants arriving by link</td><td>Can’t tell: most visits carry no referrer, because WhatsApp and in-app browsers remove it</td></tr></tbody></table>
+<p>Yes, some of those say “not measured”. I’d rather show you the gaps than pretend they aren’t there.</p>
+<p>After the round I asked players five questions. Six of the 15 answered, so these are counts, not percentages. Six people is not a study, I know, but it’s a start.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Statement</th><th>Agree or strongly agree</th><th>Neutral</th><th>Disagree</th></tr></thead><tbody><tr><td>I thought carefully about who to give my KP to</td><td>5</td><td>1</td><td>0</td></tr><tr><td>Other people’s bids made sense to me</td><td>4</td><td>2</td><td>0</td></tr><tr><td>I felt the winners deserved the money</td><td>6</td><td>0</td><td>0</td></tr><tr><td>I felt like my own bid was ignored</td><td>0</td><td>1</td><td>5</td></tr><tr><td>I would play again to try and win some money</td><td>6</td><td>0</td><td>0</td></tr></tbody></table>
+<h2 id="what-round-one-taught-me">What round one taught me</h2>
+<p><img src="/assets/images/giveway/annotated-make-your-bid.png" alt="The &#x22;Make your bid&#x22; screen with four numbered annotations: pidgin placeholder text, quick-amount buttons, a yellow &#x22;This isn&#x27;t an emergency fund&#x22; card, and the KP balance in the top bar"></p>
+<ol>
+<li><strong>The words.</strong> I wrote the placeholder in pidgin (“Omo, I wan buy garri”) and the line under it asked people not to send sad, distressing requests (“No cry for here abeg”), because the game was meant to be fun.</li>
+<li><strong>Quick amounts.</strong> In Nigeria “5k” means five thousand naira, so I added shortcut buttons. Nobody should have to type all those zeros.</li>
+<li><strong>A reminder card.</strong> A big highlighted card that said, again, this isn’t an emergency fund.</li>
+<li><strong>KP in the top bar.</strong> Your remaining balance is always in view, so the information lives on the screen and not in your head.</li>
+</ol>
+<p>Number 1 and number 3 did not work. At all. People ignored them and sent real, serious needs. And honestly, who will blame them. In Nigeria right now people need help, and you can’t give them a way to ask for it and then say “it’s just a game”. If there is a text box, people will use it. I had read about this in human-centred design, that your users’ context will beat your design intent, but omo, watching it happen to my own product was something else.</p>
+<p>Other things the round showed me:</p>
+<ul>
+<li><strong>Attention was uneven.</strong> 5 of the 7 bids got KP from other people, between 35 and 135. 2 got none. With 7 bids you can survive that, but I was worried it would get worse as bids multiplied.</li>
+<li><strong>People voted for themselves.</strong> Half of the voters gave some KP to their own bid, which came to 29% of all KP spent. Gotta settle yourself fess.</li>
+<li><strong>I came away encouraged.</strong> The numbers were small, but what it did for the people who played was enough for me to keep going.</li>
+</ul>
+<h2 id="from-gladiator-to-giveway">From Gladiator to Giveway</h2>
+<p>So I rebranded it as Giveway and rebuilt it around what round one showed me: contributions from backers, share links, a deck of 8 bids dealt by least-seen so that past about 50 bids nobody goes unseen, and a fairness model that stops a group of friends from outvoting strangers. The second giveaway runs on this version.</p>
+<p>The rest of this case study is how I designed it.</p>
+<h2 id="the-journey-as-one-system">The journey as one system</h2>
+<p>I designed everything from a host’s first payment to a winner’s bank credit as one system, because the rules at each step depend on the step before it.</p>
+<ol>
+<li><strong>Host funds.</strong> The pool is paid through Paystack first.</li>
+<li><strong>Players enter.</strong> They get 100 KP and an alias.</li>
+<li><strong>Browse a deck.</strong> Each player is dealt 8 bids, weighted toward the least seen.</li>
+<li><strong>Bid and give KP.</strong> Tallies stay hidden.</li>
+<li><strong>Voting closes. The pool is frozen.</strong> This is the point of no return.</li>
+<li><strong>The algorithm runs.</strong> The pool is split by KP.</li>
+<li><strong>Results email.</strong> A tracked link brings people back.</li>
+<li><strong>Winner claims.</strong> The bank account name is confirmed before money moves.</li>
+</ol>
+<p>The pool freezes when voting closes, so what happens with a late payment, a refund or a payout is already decided before anyone gets to those screens. If a payment lands after the freeze, it is refunded. It never gets added to a pool that has already been split.</p>
+<h2 id="decisions-that-are-hard-to-take-back">Decisions that are hard to take back</h2>
+<p><strong>How do you decide what to be careful about?</strong></p>
+<p>I sorted every decision by one question: can the person undo it? If the answer was no, I moved that decision earlier and made it more explicit. And most of them follow one rule: <strong>anything that grows the arena helps everyone, but it never helps your own bid’s score.</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Decision</th><th>Options I turned down</th><th>What it costs</th></tr></thead><tbody><tr><td>Hide KP totals, ranks and voter counts until results</td><td>A live leaderboard, which creates herd voting</td><td>Players can’t see momentum</td></tr><tr><td>Deal each player a deck of 8 bids, weighted toward least-seen, fixed once issued</td><td>One long shuffled list; sorting by popularity; re-rolling on reload</td><td>More build work, and “see all bids” must stay available so the deck never feels like a cage</td></tr><tr><td>Pool KP from a bid author’s own invites and browsers</td><td>Counting friends as strangers</td><td>An honest, well-loved bid loses ground: in my simulation its pool share fell from 4.2% to 1.9%</td></tr><tr><td>Ship that as a new algorithm version, with the old one still the default</td><td>Switching live rounds straight away</td><td>Slower rollout, so I can replay finished rounds first</td></tr><tr><td>Money buys nothing: no KP, no deck priority, no backer label on bid cards during voting</td><td>Backer badges and boosted visibility, which would sway voters</td><td>Less reward for backers, who are recognised only on the results page</td></tr><tr><td>A round goes live only after the host’s payment confirms; the fee sits on top</td><td>Letting a round start unpaid; taking the fee out of the pool</td><td>The host pays slightly more, but “₦50,000 shared” is literally true</td></tr><tr><td>The host can’t bid in their own round</td><td>Trusting hosts not to</td><td>A host can’t win their own prize</td></tr><tr><td>Referral KP can’t go to your own bid</td><td>My original spec, which allowed it</td><td>A weaker referral incentive. I overruled my own first idea</td></tr><tr><td>News emails are opt-in; unsubscribe always wins</td><td>Emailing everyone who ever joined</td><td>A smaller list, but it keeps the promise made on the join card</td></tr></tbody></table>
+<h3 id="what-people-see-first-confirm-and-can-reverse">What people see first, confirm, and can reverse</h3>
+<ul>
+<li><strong>See first:</strong> the pool in naira and a countdown, then “Enter the Arena”. Live updates never carry KP or vote tallies.</li>
+<li><strong>Confirm:</strong> nothing about KP is final until you press “Send my KP”, and the server, not your browser, decides how much you’re allowed to spend. The contribution page shows you what you did: “You added ₦2,000. The pool is now ₦145,500.”</li>
+<li><strong>Reverse:</strong> a host can cancel with a full refund until the first bid comes in. After that only an admin can, because bidders have shown up in good faith. Sent KP can be topped up but not reduced.</li>
+</ul>
+<p>The trade-off I’d defend the hardest is pooling friends’ support, because it does tax honest, popular bids. I still chose it, because without it ten friends going all-in beat one stranger going all-in ten to one. And I didn’t want to just argue that, I wanted to show it in numbers. So I ran 11 made-up rounds, with brigades, invite chains and sock puppets, through the real scoring code. The simulation also shows the cases it doesn’t catch, and I kept those in the record instead of hiding them.</p>
+<h2 id="designing-where-a-wrong-move-is-expensive">Designing where a wrong move is expensive</h2>
+<p>Two kinds of people can lose real money to a mistake here: me, as the admin, and anyone typing in a bank account number to get paid. I designed for both the same way: make the wrong move hard, show the numbers on the right move, and leave a trail.</p>
+<ul>
+<li><strong>Winners claiming money.</strong> The claim page looks up the account holder’s name, so a winner sees exactly who the money is going to before they confirm. Paystack’s test mode only allows 3 bank-name lookups a day (yes, three), so I designed the claim to need just one lookup and cache the result for 30 minutes.</li>
+<li><strong>Money coming in.</strong> A payment is confirmed with Paystack, never on the browser’s word, and confirming it twice does nothing.</li>
+<li><strong>Me sending email to a group.</strong> The segment builder only offers a fixed list of filters, no free-form queries. The preview and the send show the same number, and if they differ, the send is refused. Above 50 recipients I have to type the number in myself, and there’s a hard cap so a bad filter can’t mail everyone.</li>
+<li><strong>A near-miss.</strong> While testing the background worker, I ran it against a development database that had real pending emails in it. It sent three real emails and used up a whole day’s bank-lookup quota. Chai. No money moved, thank God. I turned that into a standing rule for myself and my tools: never process the outbox locally without asking first.</li>
+</ul>
+<h2 id="using-ai-in-my-workflow">Using AI in my workflow</h2>
+<p><strong>So did AI build this?</strong></p>
+<p>No, but it helped. I use AI as a fast second pair of hands for work I can describe clearly and check, and I keep the judgment calls for myself.</p>
+<ul>
+<li><strong>It helped me think in writing.</strong> Every big decision became a written plan before any code, with the options and what I picked.</li>
+<li><strong>It helped me move fast on big, mechanical work,</strong> like moving the backend from Node to Go, and polishing the interface against one reference page.</li>
+<li><strong>It got in the way when it touched live systems or only planned for the happy path.</strong> The near-miss above is one example. Another: the first version of the claim flow used two or more bank lookups per claim, which would have finished the daily quota in one try. I redesigned it around that limit.</li>
+<li><strong>The hard-to-reverse choices are mine.</strong> The fairness rules, how fees work and what winners see were decided by me and written down along with the options I rejected.</li>
+</ul>
+<h2 id="taking-it-the-last-mile-myself">Taking it the last mile myself</h2>
+<p>I like working in the real product and shipping to production myself. In early October I moved the backend from Node to a Go API and worker, with a Next.js frontend, and kept the identifiers that outside systems depend on. I did a full interface pass against one reference page, added share previews, policies and photo upload, and deployed to giveway.ng behind Cloudflare. I connected Paystack for money coming in, a payout partner for money going out, and a ledger to reconcile the two. And whenever a promise changed, like “your email is deleted after results”, I updated the join card and the privacy policy to match. If the product says it, it should be true.</p>
+<h2 id="what-id-do-next">What I’d do next</h2>
+<ul>
+<li>Decide whether anyone can host a giveaway. That depends on payment-before-live and payout holds being built first.</li>
+<li>Replay finished rounds with the new scoring before making it the default.</li>
+<li>Make the fairness model catch more coordinated voting, without punishing honest friend groups more than I have to.</li>
+<li>Write up the second giveaway, with contributions and sharing out in the real world. Watch this space :)</li>
+</ul> </article> </main> </div> <!-- bootstrap, :( --><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> <hr class="underline"> <footer class="container"> <section class="links text-center"> <span class="pixel-text badge bg-secondary mt-5">links:</span> <ul class="mt-2 p-0 tag-list"> <li> <a href="https://github.com/LeanKhan" target="_blank" rel="noopener">
+→ github </a>,
+</li> <li> <a href="mailto:eslean20@gmail.com" target="_blank" rel="noopener"> <!-- email -->
+→ email
+</a> </li> <li> <a href="https://www.linkedin.com/in/emmanuel-segun-lean/" target="_blank" rel="noopener"> <!-- linkedin -->
+→ linkedIn </a>,
+</li> <li> <a href="https://www.instagram.com/leankhan.photos/" target="_blank" rel="noopener"> <!-- linkedin -->
+→ photos </a>,
+</li> <li> <a href="https://drive.google.com/file/d/1bxwEgfzFa1aXP9mNjwSAjt3Uv9uJv-LE/view?usp=sharing" target="_blank" rel="noopener"> <!-- portfolio -->
+→ design portfolio
+<span class="badge bg-secondary p-1">Updated: June 2019</span> </a> </li> </ul> </section> <div class="nes-container small text-center footer"> <p> <i>do things that matter</i> </p> </div> </footer> </body></html>
