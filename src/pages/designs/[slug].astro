@@ -21,6 +21,7 @@ export async function getStaticPaths() {
 }
 
 const { design, tags } = Astro.props;
+const tagSlug = (tag: string) => tag.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 const title = design.frontmatter.title;
 const description = design.frontmatter.description;
 const permalink = `https://e.segunlean.com/designs/${Astro.params.slug}`;
@@ -70,7 +71,7 @@ const permalink = `https://e.segunlean.com/designs/${Astro.params.slug}`;
         <header class="design-detail-header">
           <h3 class="design-detail-title">{title}</h3>
           <ul class="design-detail-tags" aria-label={`${title} tags`}>
-            {tags.map((tag) => <li class="pixel-text badge bg-secondary">{tag}</li>)}
+            {tags.map((tag) => <li class="pixel-text badge bg-secondary"><a href={`/designs?tag=${tagSlug(tag)}`} style="color: inherit; text-decoration: none;">{tag}</a></li>)}
           </ul>
           <p>{description}</p>
         </header>

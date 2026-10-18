@@ -411,3 +411,31 @@ blockquote .source {
 .theme-text {
 	color: var(--theme-accent);
 }
+/* markdown tables: bare <table>, no bootstrap class */
+table {
+	display: block;
+	max-width: 100%;
+	overflow-x: auto;
+	margin: 1.5rem 0;
+	border-collapse: collapse;
+	font-size: 0.95rem;
+}
+
+th,
+td {
+	padding: 0.6rem 0.8rem;
+	border: 1px solid var(--color-gray-600);
+	text-align: left;
+	vertical-align: top;
+}
+
+thead th {
+	background: var(--color-gray-800);
+	color: var(--theme-text-lighter);
+	font-weight: 700;
+	border-bottom: 2px solid var(--theme-accent);
+}
+
+tbody tr:nth-child(even) {
+	background: rgba(255, 255, 255, 0.03);
+}

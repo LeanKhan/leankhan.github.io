@@ -9,6 +9,7 @@ let permalink = 'https://e.segunlean.com/designs';
 
 const getSlug = (file: string) => file.split(/[\\/]/).pop()?.replace(/\.md$/, '') ?? '';
 const normalizeTags = (tags = '') => tags.split(',').map((tag) => tag.trim()).filter(Boolean);
+const tagSlug = (tag: string) => tag.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 
 let allDesigns = await Astro.glob('../../meta/designs/*.md');
 allDesigns = allDesigns
@@ -21,6 +22,7 @@ allDesigns = allDesigns
   }));
 
 const allTags = Array.from(new Set(allDesigns.flatMap((design) => design.tags))).sort((a, b) => a.localeCompare(b));
+const tagHref = (tag: string) => `/designs?tag=${tagSlug(tag)}`;
 ---
 
 <html lang="en">
@@ -122,6 +124,11 @@ const allTags = Array.from(new Set(allDesigns.flatMap((design) => design.tags)))
         font-size: 0.75rem;
       }
 
+      .tag-link {
+        color: inherit;
+        text-decoration: none;
+      }
+
       .design-lightbox {
         width: min(96vw, 1200px);
         border: 0;
@@ -190,7 +197,7 @@ const allTags = Array.from(new Set(allDesigns.flatMap((design) => design.tags)))
           <section class="design-filters" aria-label="Filter designs by tag">
             <button class="filter-button pixel-text" type="button" data-filter="all" aria-pressed="true">All</button>
             {allTags.map((tag) => (
-              <button class="filter-button pixel-text" type="button" data-filter={tag.toLowerCase()} aria-pressed="false">{tag}</button>
+              <button class="filter-button pixel-text" type="button" data-filter={tagSlug(tag)} aria-pressed="false">{tag}</button>
             ))}
           </section>
         )}
@@ -203,7 +210,7 @@ const allTags = Array.from(new Set(allDesigns.flatMap((design) => design.tags)))
             const detailHref = design.frontmatter.hasPage ? `/designs/${design.slug}` : design.frontmatter.link;
 
             return (
-              <article class="design-card" data-tags={design.tags.map((tag) => tag.toLowerCase()).join(' ')}>
+              <article class="design-card" data-tags={design.tags.map(tagSlug).join(' ')}>
                 <button
                   class="design-image-button"
                   type="button"
@@ -220,7 +227,7 @@ const allTags = Array.from(new Set(allDesigns.flatMap((design) => design.tags)))
                   <p class="design-description">{designDescription}</p>
                   <div class="design-actions">
                     <ul class="design-tags" aria-label={`${designTitle} tags`}>
-                      {design.tags.map((tag) => <li class="pixel-text badge bg-secondary">{tag}</li>)}
+                      {design.tags.map((tag) => <li class="pixel-text badge bg-secondary"><a class="tag-link" href={tagHref(tag)} data-tag-link={tagSlug(tag)}>{tag}</a></li>)}
                     </ul>
                     {detailHref && <a href={detailHref}>open</a>}
                   </div>
@@ -248,18 +255,41 @@ const allTags = Array.from(new Set(allDesigns.flatMap((design) => design.tags)))
     <script>
       const filterButtons = document.querySelectorAll('[data-filter]');
       const designCards = document.querySelectorAll('.design-card');
+      const knownTags = new Set(Array.from(filterButtons).map((button) => button.getAttribute('data-filter')));
+
+      // The selected tag lives in the URL as ?tag=<slug>, so a filtered view can be linked to.
+      function applyFilter(selectedTag) {
+        const tag = selectedTag && knownTags.has(selectedTag) ? selectedTag : 'all';
+
+        filterButtons.forEach((item) => item.setAttribute('aria-pressed', String(item.getAttribute('data-filter') === tag)));
+        designCards.forEach((card) => {
+          const tags = (card.getAttribute('data-tags') || '').split(' ');
+          card.hidden = tag !== 'all' && !tags.includes(tag);
+        });
+      }
+
+      function selectTag(tag) {
+        const url = new URL(window.location.href);
+        if (tag === 'all') url.searchParams.delete('tag');
+        else url.searchParams.set('tag', tag);
+        history.pushState({}, '', url);
+        applyFilter(tag);
+      }
 
       filterButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-          const selectedTag = button.getAttribute('data-filter');
+        button.addEventListener('click', () => selectTag(button.getAttribute('data-filter') || 'all'));
+      });
 
-          filterButtons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
-          designCards.forEach((card) => {
-            const tags = card.getAttribute('data-tags') || '';
-            card.hidden = selectedTag !== 'all' && !tags.split(' ').includes(selectedTag || '');
-          });
+      document.querySelectorAll('[data-tag-link]').forEach((link) => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          selectTag(link.getAttribute('data-tag-link') || 'all');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         });
       });
+
+      window.addEventListener('popstate', () => applyFilter(new URLSearchParams(window.location.search).get('tag')));
+      applyFilter(new URLSearchParams(window.location.search).get('tag'));
 
       const lightbox = document.querySelector('#design-lightbox');
       const lightboxImage = lightbox?.querySelector('.lightbox-image');
